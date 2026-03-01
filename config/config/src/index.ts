@@ -379,7 +379,9 @@ export async function getConfig (opts: {
       throw new PnpmError('CONFIG_CONFLICT_VIRTUAL_STORE_DIR_WITH_GLOBAL',
         'Configuration conflict. "virtual-store-dir" may not be used with "global"')
     }
-    pnpmConfig.virtualStoreDir = '.pnpm'
+    if (pnpmConfig.enableGlobalVirtualStore == null) {
+      pnpmConfig.enableGlobalVirtualStore = true
+    }
   } else {
     pnpmConfig.dir = cwd
     if (!pnpmConfig.bin) {
