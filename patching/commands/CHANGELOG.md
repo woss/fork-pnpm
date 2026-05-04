@@ -1,5 +1,12 @@
 # @pnpm/plugin-commands-patching
 
+## 1100.0.10
+
+### Patch Changes
+
+- Updated dependencies [f6bc1db]
+  - @pnpm/installing.commands@1100.1.8
+
 ## 1100.0.9
 
 ### Patch Changes

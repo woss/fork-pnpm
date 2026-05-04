@@ -1,5 +1,13 @@
 # @pnpm/releasing.commands
 
+## 1100.2.7
+
+### Patch Changes
+
+- 2b8932d: Fixed `pnpm publish` to honor `publishConfig.registry` from `package.json` when publishing a single package. The native publish flow introduced in v11 was reading the registry from `.npmrc` only, ignoring the per-package override [#11419](https://github.com/pnpm/pnpm/issues/11419).
+- Updated dependencies [f6bc1db]
+  - @pnpm/installing.commands@1100.1.8
+
 ## 1100.2.6
 
 ### Patch Changes

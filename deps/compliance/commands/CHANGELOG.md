@@ -1,5 +1,12 @@
 # @pnpm/deps.compliance.commands
 
+## 1101.1.7
+
+### Patch Changes
+
+- Updated dependencies [f6bc1db]
+  - @pnpm/installing.commands@1100.1.8
+
 ## 1101.1.6
 
 ### Patch Changes
