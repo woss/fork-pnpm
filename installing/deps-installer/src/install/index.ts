@@ -3,7 +3,7 @@ import path from 'node:path'
 import { linkBins, linkBinsOfPackages } from '@pnpm/bins.linker'
 import { buildSelectedPkgs } from '@pnpm/building.after-install'
 import { buildModules, type DepsStateCache, linkBinsOfDependencies } from '@pnpm/building.during-install'
-import { createAllowBuildFunction } from '@pnpm/building.policy'
+import { createAllowBuildFunction, isBuildExplicitlyDisallowed } from '@pnpm/building.policy'
 import { parseCatalogProtocol } from '@pnpm/catalogs.protocol-parser'
 import { type CatalogResultMatcher, matchCatalogResolveResult, resolveFromCatalog } from '@pnpm/catalogs.resolver'
 import type { Catalogs } from '@pnpm/catalogs.types'
@@ -1495,7 +1495,7 @@ const _installInContext: InstallFunction = async (projects, ctx, opts) => {
         if (ctx.modulesFile?.ignoredBuilds?.size) {
           ignoredBuilds ??= new Set()
           for (const ignoredBuild of ctx.modulesFile.ignoredBuilds.values()) {
-            if (result.currentLockfile.packages?.[ignoredBuild]) {
+            if (result.currentLockfile.packages?.[ignoredBuild] && !isBuildExplicitlyDisallowed(ignoredBuild, opts.allowBuild)) {
               ignoredBuilds.add(ignoredBuild)
             }
           }
