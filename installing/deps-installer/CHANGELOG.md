@@ -1,5 +1,17 @@
 # @pnpm/core
 
+## 1101.0.6
+
+### Patch Changes
+
+- ab6c42d: Treat `allowBuilds` as an install-state input and clear previously ignored builds when they are explicitly disallowed.
+- Updated dependencies [ab6c42d]
+  - @pnpm/building.policy@1100.0.3
+  - @pnpm/installing.deps-restorer@1101.0.5
+  - @pnpm/building.after-install@1101.0.6
+  - @pnpm/building.during-install@1101.0.4
+  - @pnpm/installing.package-requester@1101.0.2
+
 ## 1101.0.5
 
 ### Patch Changes

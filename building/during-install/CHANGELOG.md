@@ -1,5 +1,17 @@
 # @pnpm/building.during-install
 
+## 1101.0.4
+
+### Patch Changes
+
+- Updated dependencies [8fdd9a9]
+- Updated dependencies [5f34a8d]
+- Updated dependencies [c969392]
+- Updated dependencies [817b1b4]
+- Updated dependencies [c969392]
+- Updated dependencies [2de318b]
+  - @pnpm/config.reader@1101.2.0
+
 ## 1101.0.3
 
 ### Patch Changes
