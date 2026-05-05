@@ -1,5 +1,26 @@
 # @pnpm/engine.pm.commands
 
+## 1101.1.6
+
+### Patch Changes
+
+- 0219ab2: Fixed `pnpm self-update` on installations originally set up by pnpm v10. v10 added `PNPM_HOME` directly to PATH and wrote a `pnpm` bootstrap shim there. v11 setup writes shims under `PNPM_HOME/bin` instead, so when a v10 user upgrades to v11 the legacy shim at `PNPM_HOME` keeps pointing into the old `.tools/<version>` install — `pnpm --version` continues to report the pre-update version even though the new version was installed under `global/v11`. Self-update now detects this layout, refreshes the legacy shims so the upgrade actually takes effect, and prints a hint suggesting `pnpm setup` to migrate PATH to the v11 layout. [#11464](https://github.com/pnpm/pnpm/issues/11464).
+- Updated dependencies [8fdd9a9]
+- Updated dependencies [5f34a8d]
+- Updated dependencies [c969392]
+- Updated dependencies [ab6c42d]
+- Updated dependencies [817b1b4]
+- Updated dependencies [c969392]
+- Updated dependencies [2de318b]
+  - @pnpm/config.reader@1101.2.0
+  - @pnpm/building.policy@1100.0.3
+  - @pnpm/installing.deps-restorer@1101.0.5
+  - @pnpm/global.commands@1100.0.11
+  - @pnpm/store.connection-manager@1100.0.10
+  - @pnpm/installing.client@1100.0.9
+  - @pnpm/installing.env-installer@1101.0.4
+  - @pnpm/store.controller@1101.0.2
+
 ## 1101.1.5
 
 ### Patch Changes

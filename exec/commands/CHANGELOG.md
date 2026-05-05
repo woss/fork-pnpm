@@ -1,5 +1,23 @@
 # @pnpm/plugin-commands-script-runners
 
+## 1100.1.1
+
+### Patch Changes
+
+- Updated dependencies [8fdd9a9]
+- Updated dependencies [5f34a8d]
+- Updated dependencies [c969392]
+- Updated dependencies [ab6c42d]
+- Updated dependencies [817b1b4]
+- Updated dependencies [c969392]
+- Updated dependencies [2de318b]
+  - @pnpm/config.reader@1101.2.0
+  - @pnpm/deps.status@1100.0.9
+  - @pnpm/building.commands@1100.0.11
+  - @pnpm/engine.runtime.commands@1100.0.10
+  - @pnpm/installing.commands@1100.1.9
+  - @pnpm/installing.client@1100.0.9
+
 ## 1100.1.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @pnpm/pnpmfile
 
+## 1100.0.5
+
+### Patch Changes
+
+- 8131d7c: Validate all `readPackage` dependency map fields, including `devDependencies`, and reject falsy non-object invalid values instead of silently accepting them.
+
 ## 1100.0.4
 
 ### Patch Changes

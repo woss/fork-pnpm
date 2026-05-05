@@ -1,5 +1,21 @@
 # @pnpm/config
 
+## 1101.2.0
+
+### Minor Changes
+
+- 8fdd9a9: Export `getNetworkConfigs`, `getDefaultCreds`, and the `NetworkConfigs` type so consumers can derive a `configByUri` map from a flat npmrc-style auth dict without re-implementing the parsing logic.
+
+### Patch Changes
+
+- 5f34a8d: Throw a pnpm error when `overrides` has an invalid shape or contains a non-string value.
+- c969392: Fix `pnpm_config_npmrc_auth_file` and `pnpm_config_userconfig` env vars not actually loading the custom `.npmrc`. The env vars were parsed and assigned to the resolved config, but only after `loadNpmrcConfig` had already read the default `~/.npmrc` — so the custom file path was set but never read. The relevant env vars are now consulted before the user-level `.npmrc` is loaded [#11465](https://github.com/pnpm/pnpm/issues/11465).
+- 817b1b4: Fixes #10594, catalogs not being read from the workspace when using the `catalog:` protocol with the `pnpm dlx` / `pnpx` command, resulting in a catalog entry not found error.
+- c969392: Accept `PNPM_CONFIG_*` (uppercase) environment variables in addition to `pnpm_config_*`. Previously, only the lowercase form was honored, so env vars renamed per the v11 migration guide (e.g. `PNPM_CONFIG_USERCONFIG`) silently had no effect on case-sensitive systems like macOS and Linux [#11465](https://github.com/pnpm/pnpm/issues/11465).
+- 2de318b: Print a warning when settings that are not allowed in the global config file (e.g. `nodeLinker`, `hoistPattern`) are present in `config.yaml` and silently ignored. Previously these settings were dropped without any feedback, leaving users unsure why their global configuration had no effect. The warning suggests moving those settings to a project-level `pnpm-workspace.yaml`, or sharing them across projects via [config dependencies](https://pnpm.io/11.x/config-dependencies).
+- Updated dependencies [8131d7c]
+  - @pnpm/hooks.pnpmfile@1100.0.5
+
 ## 1101.1.4
 
 ### Patch Changes
